@@ -9,7 +9,6 @@ body {
     margin: 0;
 }
 
-/* FIXED: Shifts the entire container layout 1.5 inches (144px) closer to the top */
 .homepage-container {
     display: flex;
     flex-direction: column;
@@ -17,7 +16,7 @@ body {
     width: 100%;
     max-width: 800px; 
     padding: 20px;
-    margin-top: -144px; 
+    margin-top: -144px; /* Perfectly shifts everything up 1.5 inches */
 }
 
 /* FIXED DIMENSIONS: Rounded Dark Card Container Box (Exactly 4 inches wide) */
@@ -127,7 +126,7 @@ body {
     border-radius: 26px; 
     display: flex;
     align-items: center;
-    padding: 0 12px 0 24px; /* Less right padding to align the new buttons nicely */
+    padding: 0 12px 0 24px; 
     box-sizing: border-box; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     margin-top: 15px; 
@@ -151,7 +150,7 @@ body {
     height: 100%;
 }
 
-/* NEW: Holds the microphone, lens, and capsule buttons aligned on the right side */
+/* Group container for search icons */
 .search-icons-group {
     display: flex;
     align-items: center;
@@ -164,7 +163,7 @@ body {
     cursor: pointer;
 }
 
-/* NEW: The stylized modern AI Mode toggle button */
+/* Modern AI Mode toggle button */
 .ai-capsule {
     background-color: #f1f3f4;
     border: 1px solid #dadce0;
@@ -188,11 +187,14 @@ body {
     height: 14px;
 }
 
-/* NEW: Handles the layout spacing and look of the shortcut badges */
+/* =======================================================
+   SHORTCUTS STYLING SECTION
+   ======================================================= */
+
 .shortcuts-container {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 34px;
     margin-top: 30px;
     width: 100%;
 }
@@ -207,30 +209,33 @@ body {
 }
 
 .shortcut-item:hover {
-    transform: scale(1.05); /* Gently pops out when hovered over */
+    transform: scale(1.08); 
 }
 
 .shortcut-icon {
     width: 48px;
     height: 48px;
-    border-radius: 50%; /* Perfect circle circles */
-    background-color: #ffffff;
+    border-radius: 50%; 
+    background-color: rgba(255, 255, 255, 0.15); /* Sleek modern translucent white background */
+    backdrop-filter: blur(4px);
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     margin-bottom: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Custom icon branding colors */
-.icon-yt { color: #ff0000; }
-.icon-gh { color: #24292e; }
-.icon-wp { color: #000000; }
+/* Crisp icon font text colors */
+.icon-yt { color: #ff4a4a; }
+.icon-gh { color: #ffffff; }
+.icon-wp { color: #e1e1e1; }
 
 .shortcut-label {
-    font-size: 12px;
-    color: #ffffff; /* White label text against the brown page */
+    font-size: 13px;
+    color: #ffffff; 
     font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
