@@ -1,0 +1,189 @@
+/* Core Page Layout */
+body {
+    background-color: #533535; 
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* FIXED: Shifts the entire container layout 1.5 inches (144px) closer to the top */
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; 
+    padding: 20px;
+    margin-top: -144px; 
+}
+
+/* FIXED DIMENSIONS: Rounded Dark Card Container Box (Exactly 4 inches wide) */
+.doodle-card-container {
+    background-color: #1f1f1f; 
+    width: 384px;  
+    height: 168px; /* Exactly 1.75 inches high */
+    border-radius: 24px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.doodle-layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px; 
+}
+
+.doodle-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doodle-text {
+    font-size: 68px; 
+    font-weight: bold;
+    color: #e91e63; 
+    letter-spacing: -2px;
+    user-select: none;
+}
+
+.soccer-animation-box {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 -3px;
+}
+
+/* Advanced filter sequence to wipe out ghost boxes */
+.soccer-animation-box img {
+    position: absolute;
+    top: 5%;      
+    left: 5%;     
+    width: 90%;   
+    height: 90%;  
+    object-fit: contain;
+    opacity: 0;
+    animation: fadeLoop 1.6s infinite ease-in-out;
+    filter: invert(1) contrast(800%) brightness(150%); 
+    mix-blend-mode: screen; 
+}
+
+.soccer-animation-box .f1 { animation-delay: 0.0s; }
+.soccer-animation-box .f2 { animation-delay: 0.4s; }
+.soccer-animation-box .f3 { animation-delay: 0.8s; }
+.soccer-animation-box .f4 { animation-delay: 1.2s; }
+
+@keyframes fadeLoop {
+    0%, 20% { opacity: 1; }
+    25%, 95% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* High-brightness Rainbow Typography Configuration */
+.doodle-banner {
+    font-size: 13px; 
+    font-weight: 900;
+    font-style: italic; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    user-select: none;
+    
+    background: linear-gradient(
+        45deg, 
+        #ff0055, #ff9900, #ffea00, #00ff66, #00ffff, #0022ff, #cc00ff, #ff0055
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: 
+        rainbowScroll 3s linear infinite,
+        bannerFade 4.5s infinite ease-in-out;
+}
+
+@keyframes rainbowScroll {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes bannerFade {
+    0%, 10% { opacity: 0; transform: translateY(3px); }
+    20%, 75% { opacity: 1; transform: translateY(0px); } 
+    85%, 100% { opacity: 0; transform: translateY(-3px); }
+}
+
+/* FIXED DIMENSIONS: White Pill Search Bar Wrapper (Exactly 7 inches wide) */
+.search-bar-wrapper {
+    background-color: #ffffff;
+    width: 672px; 
+    height: 52px; 
+    border-radius: 26px; 
+    display: flex;
+    align-items: center;
+    padding: 0 12px 0 24px; /* Less right padding to align the new buttons nicely */
+    box-sizing: border-box; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    margin-top: 15px; 
+}
+
+.plus-icon {
+    font-size: 24px;
+    color: #5f6368;
+    margin-right: 16px;
+    font-weight: 300;
+    user-select: none;
+}
+
+.search-bar-wrapper input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #202124;
+    outline: none;
+    height: 100%;
+}
+
+/* NEW: Holds the microphone, lens, and capsule buttons aligned on the right side */
+.search-icons-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.search-svg {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+/* NEW: The stylized modern AI Mode toggle button */
+.ai-capsule {
+    background-color: #f1f3f4;
+    border: 1px solid #dadce0;
+    padding: 6px 14px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ai-capsule span {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1f1f1f;
+}
+
+.ai-sparkle-svg {
+    width: 14px;
+    height: 14px;
+}
